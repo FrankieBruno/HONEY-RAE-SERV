@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 
 class Employee(models.Model):
-    id = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     specialty = models.CharField(max_length=155)
 

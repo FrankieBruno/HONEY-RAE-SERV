@@ -10,6 +10,8 @@ pylint = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 pylint-django = "*"
+gunicorn = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
