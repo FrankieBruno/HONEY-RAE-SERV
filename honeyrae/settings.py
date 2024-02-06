@@ -62,6 +62,10 @@ CORS_ORIGIN_WHITELIST = (
    'https://honey-rae.netlify.app'
 )
 
+ALLOWED_ORIGINS = [
+    'https://honey-rae.netlify.app'
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
