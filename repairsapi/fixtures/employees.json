@@ -1,0 +1,26 @@
+[
+    {
+        "model": "repairsapi.employee",
+        "pk": 1,
+        "fields": {
+            "user": 2,
+            "specialty": "Routers"
+        }
+    },
+    {
+        "model": "repairsapi.employee",
+        "pk": 2,
+        "fields": {
+            "user": 5,
+            "specialty": "Laptops"
+        }
+    },
+    {
+        "model": "repairsapi.employee",
+        "pk": 3,
+        "fields": {
+            "user": 6,
+            "specialty": "Mobile phones"
+        }
+    }
+]

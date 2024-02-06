@@ -1,0 +1,101 @@
+[
+    {
+        "model": "repairsapi.serviceticket",
+        "pk": 1,
+        "fields": {
+            "customer": 3,
+            "employee": 1,
+            "description": "Voluptas recusandae distinctio cumque qui nobis quidem nesciunt maiores exercitationem. Magni ut consectetur eligendi eum iusto.",
+            "emergency": true,
+            "date_completed": null
+        }
+    },
+    {
+        "model": "repairsapi.serviceticket",
+        "pk": 2,
+        "fields": {
+            "customer": 1,
+            "employee": 2,
+            "description": "Suscipit consequatur aspernatur autem dolorum voluptatum omnis vel veniam. Ex fuga quod iusto autem repellat. Aliquid ut iste fugit id ea. Quae aperiam deleniti animi.",
+            "emergency": false,
+            "date_completed": "2022-01-19"
+        }
+    },
+    {
+        "model": "repairsapi.serviceticket",
+        "pk": 3,
+        "fields": {
+            "customer": 3,
+            "employee": 3,
+            "description": "Facilis provident dignissimos sit. In nihil quia laborum aliquam et quibusdam quae fugiat. Ut aut velit illum error quod. Eum necessitatibus cupiditate est deleniti perferendis provident qui eius culpa. Reprehenderit voluptas dolor quisquam consequatur.",
+            "emergency": false,
+            "date_completed": "2022-03-01"
+        }
+    },
+    {
+        "model": "repairsapi.serviceticket",
+        "pk": 4,
+        "fields": {
+            "customer": 2,
+            "employee": 3,
+            "description": "Ea ut aliquam praesentium. Beatae molestiae maiores accusantium et.",
+            "emergency": false,
+            "date_completed": null
+        }
+    },
+    {
+        "model": "repairsapi.serviceticket",
+        "pk": 5,
+        "fields": {
+            "customer": 1,
+            "employee": 2,
+            "description": "Numquam qui accusamus nesciunt dignissimos dicta quos. In quidem esse omnis quasi qui. Dicta officia minus laudantium alias omnis autem laboriosam nobis.",
+            "emergency": false,
+            "date_completed": null
+        }
+    },
+    {
+        "model": "repairsapi.serviceticket",
+        "pk": 6,
+        "fields": {
+            "customer": 2,
+            "employee": 2,
+            "description": "Quod officiis possimus quos similique commodi vel facere. Eaque corporis doloremque possimus facilis iste deserunt. Est fuga saepe natus corrupti vel dolorum. Nostrum dolorem et reprehenderit et ex.",
+            "emergency": false,
+            "date_completed": "2022-03-19"
+        }
+    },
+    {
+        "model": "repairsapi.serviceticket",
+        "pk": 7,
+        "fields": {
+            "customer": 3,
+            "employee": 2,
+            "description": "Aut qui possimus quisquam quibusdam illo in provident. Et repellendus reprehenderit quidem reiciendis deleniti doloribus.",
+            "emergency": true,
+            "date_completed": null
+        }
+    },
+    {
+        "model": "repairsapi.serviceticket",
+        "pk": 8,
+        "fields": {
+            "customer": 1,
+            "employee": 2,
+            "description": "Voluptas expedita quaerat quisquam est officia assumenda aut ut. Maxime aut quaerat labore iure.",
+            "emergency": false,
+            "date_completed": "2022-02-02"
+        }
+    },
+    {
+        "model": "repairsapi.serviceticket",
+        "pk": 9,
+        "fields": {
+            "customer": 3,
+            "employee": null,
+            "description": "Quae ea nam veritatis molestiae sapiente dolore omnis eaque ipsum. Et et architecto quod. Ea qui ipsa et. Quisquam quidem et qui nulla asperiores a. Porro illum tempore. Quaerat magni quo.",
+            "emergency": false,
+            "date_completed": null
+        }
+    }
+]

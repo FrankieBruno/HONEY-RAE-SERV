@@ -1,0 +1,26 @@
+[
+    {
+        "model": "repairsapi.customer",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "address": "404 Unknown Way"
+        }
+    },
+    {
+        "model": "repairsapi.customer",
+        "pk": 2,
+        "fields": {
+            "user": 3,
+            "address": "400 Bad Request Ave"
+        }
+    },
+    {
+        "model": "repairsapi.customer",
+        "pk": 3,
+        "fields": {
+            "user": 4,
+            "address": "401 Unauthorized Ct."
+        }
+    }
+]
