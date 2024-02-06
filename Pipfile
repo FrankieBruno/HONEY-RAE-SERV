@@ -12,6 +12,8 @@ django-cors-headers = "*"
 pylint-django = "*"
 gunicorn = "*"
 python-dotenv = "*"
+dill = "*"
+tomli = "*"
 
 [dev-packages]
 
