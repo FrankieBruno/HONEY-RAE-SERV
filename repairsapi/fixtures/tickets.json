@@ -1,6 +1,6 @@
 [
     {
-        "model": "repairsapi.serviceticket",
+        "model": "repairsapi.ticket",
         "pk": 1,
         "fields": {
             "customer": 3,
@@ -11,7 +11,7 @@
         }
     },
     {
-        "model": "repairsapi.serviceticket",
+        "model": "repairsapi.ticket",
         "pk": 2,
         "fields": {
             "customer": 1,
@@ -22,7 +22,7 @@
         }
     },
     {
-        "model": "repairsapi.serviceticket",
+        "model": "repairsapi.ticket",
         "pk": 3,
         "fields": {
             "customer": 3,
@@ -33,7 +33,7 @@
         }
     },
     {
-        "model": "repairsapi.serviceticket",
+        "model": "repairsapi.ticket",
         "pk": 4,
         "fields": {
             "customer": 2,
@@ -44,7 +44,7 @@
         }
     },
     {
-        "model": "repairsapi.serviceticket",
+        "model": "repairsapi.ticket",
         "pk": 5,
         "fields": {
             "customer": 1,
@@ -55,7 +55,7 @@
         }
     },
     {
-        "model": "repairsapi.serviceticket",
+        "model": "repairsapi.ticket",
         "pk": 6,
         "fields": {
             "customer": 2,
@@ -66,7 +66,7 @@
         }
     },
     {
-        "model": "repairsapi.serviceticket",
+        "model": "repairsapi.ticket",
         "pk": 7,
         "fields": {
             "customer": 3,
@@ -77,7 +77,7 @@
         }
     },
     {
-        "model": "repairsapi.serviceticket",
+        "model": "repairsapi.ticket",
         "pk": 8,
         "fields": {
             "customer": 1,
@@ -88,7 +88,7 @@
         }
     },
     {
-        "model": "repairsapi.serviceticket",
+        "model": "repairsapi.ticket",
         "pk": 9,
         "fields": {
             "customer": 3,
