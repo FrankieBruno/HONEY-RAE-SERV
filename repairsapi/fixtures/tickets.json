@@ -1,6 +1,6 @@
 [
     {
-        "model": "repairsapi.ticket",
+        "model": "repairsapi.tickets",
         "pk": 1,
         "fields": {
             "customer": 3,
@@ -11,7 +11,7 @@
         }
     },
     {
-        "model": "repairsapi.ticket",
+        "model": "repairsapi.tickets",
         "pk": 2,
         "fields": {
             "customer": 1,
@@ -22,7 +22,7 @@
         }
     },
     {
-        "model": "repairsapi.ticket",
+        "model": "repairsapi.tickets",
         "pk": 3,
         "fields": {
             "customer": 3,
