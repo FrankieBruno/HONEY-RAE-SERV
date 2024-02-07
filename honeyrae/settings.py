@@ -109,6 +109,12 @@ WSGI_APPLICATION = 'honeyrae.wsgi.application'
 #     }
 # }
 
+DATABASE_URL = os.environ.get('DATABASE_URL')
+
+DATABASES = {
+    'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
