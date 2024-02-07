@@ -1,0 +1,7 @@
+django
+autopep8
+pylint
+djangorestframework
+django-cors-headers
+pylint-django
+python-dotenv

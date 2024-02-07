@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "36ca2616503cb2c8c60021fba8532b83e212fb845598f2ed09fa84082cfba736"
+            "sha256": "23df2d2c093f56be9c15eaff1083b5cbeb03f89b333ad7a616268ebde7463ce8"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -46,8 +46,7 @@
                 "sha256:3ebe3c479ad625c4553aca177444d89b486b1d84982eeacded644afc0cf797ca",
                 "sha256:c36ca9ffb54365bdd2f8eb3eff7d2a21237f8452b57ace88b1ac615b7e815bd7"
             ],
-            "index": "pypi",
-            "markers": "python_version >= '3.8'",
+            "markers": "python_version < '3.11'",
             "version": "==0.3.8"
         },
         "dj-database-url": {
@@ -59,12 +58,12 @@
         },
         "django": {
             "hashes": [
-                "sha256:5dd5b787c3ba39637610fe700f54bf158e33560ea0dba600c19921e7ff926ec5",
-                "sha256:aaee9fb0fb4ebd4311520887ad2e33313d368846607f82a9a0ed461cd4c35b18"
+                "sha256:12498cc3cb8bc8038539fef9e90e95f507502436c1f0c3a673411324fa675d14",
+                "sha256:2cc2fc7d1708ada170ddd6c99f35cc25db664f165d3794bc7723f46b2f8c8984"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.6'",
-            "version": "==3.2.24"
+            "markers": "python_version >= '3.8'",
+            "version": "==4.2.9"
         },
         "django-cors-headers": {
             "hashes": [
@@ -274,8 +273,7 @@
                 "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc",
                 "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"
             ],
-            "index": "pypi",
-            "markers": "python_version >= '3.7'",
+            "markers": "python_version < '3.11'",
             "version": "==2.0.1"
         },
         "tomlkit": {
@@ -291,8 +289,7 @@
                 "sha256:23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783",
                 "sha256:af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd"
             ],
-            "index": "pypi",
-            "markers": "python_version >= '3.8'",
+            "markers": "python_version < '3.10'",
             "version": "==4.9.0"
         },
         "whitenoise": {
