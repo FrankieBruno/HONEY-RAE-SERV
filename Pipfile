@@ -15,7 +15,7 @@ gunicorn = "*"
 python-dotenv = "*"
 dill = "*"
 tomli = "*"
-django-on-heroku = "*"
+django_heroku = "*"
 
 [dev-packages]
 
