@@ -115,16 +115,16 @@ DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600)
 }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd5pjiij4m2das3',
-        'USER': 'qzpikjavodujjp',
-        'PASSWORD': 'ac32a96dffafaf2ed320f5566d0a3dc71cb1adf9714c774dae76f5325a080524',
-        'HOST': 'ec2-35-170-27-172.compute-1.amazonaws.com',
-        'PORT': '5432'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd5pjiij4m2das3',
+#         'USER': 'qzpikjavodujjp',
+#         'PASSWORD': 'ac32a96dffafaf2ed320f5566d0a3dc71cb1adf9714c774dae76f5325a080524',
+#         'HOST': 'ec2-35-170-27-172.compute-1.amazonaws.com',
+#         'PORT': '5432'
+#     }
+# }
 
 
 # Password validation
