@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = ">=3.2,<4"
+typing-extensions = ">=3.7.4"
+autopep8 = "*"
+pylint = "*"
+djangorestframework = "*"
+django-cors-headers = "*"
+pylint-django = "*"
+gunicorn = "*"
+python-dotenv = "*"
+dill = "*"
+tomli = "*"
+django-on-heroku = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
