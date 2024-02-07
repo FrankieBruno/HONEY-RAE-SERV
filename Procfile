@@ -1,2 +1,2 @@
-web: gunicorn honeyrae.wsgi:application --log-file -
+web: gunicorn honeyrae.wsgi:application --log-file
 
