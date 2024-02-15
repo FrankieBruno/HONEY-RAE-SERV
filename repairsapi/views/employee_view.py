@@ -31,15 +31,15 @@ class EmployeeView(ViewSet):
         serialized = EmployeeSerializer(employee)
         return Response(serialized.data, status=status.HTTP_200_OK)
 
-    def update(self, request, pk=None):
-        """
-        Handle PUT requests for an employee
-        """
-        employee = Employee.objects.get(pk=pk)
-        serializer = EmployeeSerializer(employee, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    # def update(self, request, pk=None):
+    #     """
+    #     Handle PUT requests for an employee
+    #     """
+    #     employee = Employee.objects.get(pk=pk)
+    #     serializer = EmployeeSerializer(employee, data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 
