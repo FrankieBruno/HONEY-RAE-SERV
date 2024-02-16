@@ -13,6 +13,7 @@ django-on-heroku = "*"
 pylint-django = "*"
 gunicorn = "*"
 python-dotenv = "*"
+faker = "*"
 
 [dev-packages]
 

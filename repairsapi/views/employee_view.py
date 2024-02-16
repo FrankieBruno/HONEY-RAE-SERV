@@ -1,9 +1,12 @@
 """View module for handling requests for employee data"""
 from django.http import HttpResponseServerError
+from django.contrib.auth.models import User
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from repairsapi.models import Employee
+import Faker 
+
 
 
 class EmployeeView(ViewSet):
@@ -31,15 +34,57 @@ class EmployeeView(ViewSet):
         serialized = EmployeeSerializer(employee)
         return Response(serialized.data, status=status.HTTP_200_OK)
 
-    # def update(self, request, pk=None):
-    #     """
-    #     Handle PUT requests for an employee
-    #     """
-    #     employee = Employee.objects.get(pk=pk)
-    #     serializer = EmployeeSerializer(employee, data=request.data)
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #     return Response(serializer.data, status=status.HTTP_200_OK)
+    def create(self, request):
+        """Handle POST requests for Employee
+
+        Returns:
+            Response: JSON serialized representation of newly created Employee
+        """
+        print(request.data)
+        user = User.objects.create_user(
+            username=Faker().user_name(),
+            email=Faker().email(),
+            password=Faker().password(),
+            first_name=request.data['firstName'],
+            last_name=request.data['lastName'],
+        )
+        new_employee = Employee.objects.create(
+            user=user,
+            specialty=""
+        )
+        new_employee.save()
+        serialized = EmployeeSerializer(new_employee)
+
+        return Response(serialized.data, status=status.HTTP_201_CREATED)
+
+    def update(self, request, pk=None):
+        """Handle put request for single employee"""
+        print(request.data)
+        ticket = Employee.objects.get(pk=pk)
+        employee = request.data['id']
+        specialty = request.data['specialty']
+
+        print('employee update')
+        print(employee)
+        print(specialty)
+
+        if employee == 0:
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
+        
+        assigned_employee = Employee.objects.get(pk=employee)
+        print(assigned_employee)
+        
+        assigned_employee.specialty = specialty
+        
+        assigned_employee.save()
+
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
+    def destroy(self, request, pk=None):
+        employee = Employee.objects.get(pk=pk)
+        employee.delete()
+        
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
 
 
 
