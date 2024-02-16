@@ -40,6 +40,7 @@ class EmployeeView(ViewSet):
         Returns:
             Response: JSON serialized representation of newly created Employee
         """
+        print("hitcustomer")
         print(request.data)
         user = User.objects.create_user(
             username=Faker().user_name(),
