@@ -5,7 +5,6 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from repairsapi.models import Employee
-import Faker 
 
 
 
@@ -40,23 +39,24 @@ class EmployeeView(ViewSet):
         Returns:
             Response: JSON serialized representation of newly created Employee
         """
-        print("hitcustomer")
-        print(request.data)
-        user = User.objects.create_user(
-            username=Faker().user_name(),
-            email=Faker().email(),
-            password=Faker().password(),
-            first_name=request.data['firstName'],
-            last_name=request.data['lastName'],
-        )
-        new_employee = Employee.objects.create(
-            user=user,
-            specialty=""
-        )
-        new_employee.save()
-        serialized = EmployeeSerializer(new_employee)
 
-        return Response(serialized.data, status=status.HTTP_201_CREATED)
+        print(request.data)
+        # user = User.objects.create_user(
+        #     username=Faker().user_name(),
+        #     email=Faker().email(),
+        #     password=Faker().password(),
+        #     first_name=request.data['firstName'],
+        #     last_name=request.data['lastName'],
+        # )
+        # new_employee = Employee.objects.create(
+        #     user=user,
+        #     specialty=""
+        # )
+        # new_employee.save()
+        # serialized = EmployeeSerializer(new_employee)
+
+        # return Response(serialized.data, status=status.HTTP_201_CREATED)
+        return Response(True, status=status.HTTP_201_CREATED)
 
     def update(self, request, pk=None):
         """Handle put request for single employee"""
