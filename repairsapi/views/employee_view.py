@@ -41,22 +41,20 @@ class EmployeeView(ViewSet):
         """
 
         print(request.data)
-        # user = User.objects.create_user(
-        #     username=Faker().user_name(),
-        #     email=Faker().email(),
-        #     password=Faker().password(),
-        #     first_name=request.data['firstName'],
-        #     last_name=request.data['lastName'],
-        # )
-        # new_employee = Employee.objects.create(
-        #     user=user,
-        #     specialty=""
-        # )
-        # new_employee.save()
-        # serialized = EmployeeSerializer(new_employee)
+        user = User.objects.create_user(
+            username=request.data['username'],
+            email=request.data['email'],
+            first_name=request.data['firstName'],
+            last_name=request.data['lastName'],
+        )
+        new_employee = Employee.objects.create(
+            user=user,
+            specialty=""
+        )
+        new_employee.save()
+        serialized = EmployeeSerializer(new_employee)
 
-        # return Response(serialized.data, status=status.HTTP_201_CREATED)
-        return Response(True, status=status.HTTP_201_CREATED)
+        return Response(serialized.data, status=status.HTTP_201_CREATED)
 
     def update(self, request, pk=None):
         """Handle put request for single employee"""
