@@ -1,0 +1,101 @@
+[
+    {
+        "model": "repairsapi.Ticket",
+        "pk": 1,
+        "fields": {
+            "customer": 3,
+            "employee": 1,
+            "description": "fix me.",
+            "emergency": true,
+            "date_completed": null
+        }
+    },
+    {
+        "model": "repairsapi.Ticket",
+        "pk": 2,
+        "fields": {
+            "customer": 1,
+            "employee": 2,
+            "description": "fix me please.",
+            "emergency": false,
+            "date_completed": "2022-01-19"
+        }
+    },
+    {
+        "model": "repairsapi.Ticket",
+        "pk": 3,
+        "fields": {
+            "customer": 3,
+            "employee": 3,
+            "description": "fix me now.",
+            "emergency": false,
+            "date_completed": "2022-03-01"
+        }
+    },
+    {
+        "model": "repairsapi.Ticket",
+        "pk": 4,
+        "fields": {
+            "customer": 2,
+            "employee": 3,
+            "description": "fix me nowwww.",
+            "emergency": false,
+            "date_completed": null
+        }
+    },
+    {
+        "model": "repairsapi.Ticket",
+        "pk": 5,
+        "fields": {
+            "customer": 1,
+            "employee": 2,
+            "description": "fix me nowwwww you.",
+            "emergency": false,
+            "date_completed": null
+        }
+    },
+    {
+        "model": "repairsapi.Ticket",
+        "pk": 6,
+        "fields": {
+            "customer": 2,
+            "employee": 2,
+            "description": "you better fix me.",
+            "emergency": false,
+            "date_completed": "2022-03-19"
+        }
+    },
+    {
+        "model": "repairsapi.Ticket",
+        "pk": 7,
+        "fields": {
+            "customer": 3,
+            "employee": 2,
+            "description": "im not going to ask again fix me.",
+            "emergency": true,
+            "date_completed": null
+        }
+    },
+    {
+        "model": "repairsapi.Ticket",
+        "pk": 8,
+        "fields": {
+            "customer": 1,
+            "employee": 2,
+            "description": "thats it i gotta kill you",
+            "emergency": false,
+            "date_completed": "2022-02-02"
+        }
+    },
+    {
+        "model": "repairsapi.Ticket",
+        "pk": 9,
+        "fields": {
+            "customer": 3,
+            "employee": null,
+            "description": "great now you done pissed me off.",
+            "emergency": false,
+            "date_completed": null
+        }
+    }
+]
