@@ -59,11 +59,31 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-   'https://honey-rae.netlify.app'
+    'https://honey-rae.netlify.app',
+    'https://honey-rae-26f1b4aa2689.herokuapp.com',
 )
 
-ALLOWED_ORIGINS = [
-    'https://honey-rae.netlify.app'
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'https://honey-rae.netlify.app',
+    'https://honey-rae-26f1b4aa2689.herokuapp.com',
+]
+
+# Allow credentials (cookies, authorization headers)
+CORS_ALLOW_CREDENTIALS = True
+
+# Allow all headers
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
 
 MIDDLEWARE = [
