@@ -17,12 +17,12 @@ def login_user(request):
     Method arguments:
       request -- The full HTTP request object
     '''
-    email = request.data['email']
-    password = request.data['password']
+    username = request.data.get('username', '')
+    password = request.data.get('password', '')
 
     # Use the built-in authenticate method to verify
     # authenticate returns the user object or None if no user is found
-    authenticated_user = authenticate(username=email, password=password)
+    authenticated_user = authenticate(username=username, password=password)
 
     # If authentication was successful, respond with their token
     if authenticated_user is not None:
@@ -39,6 +39,7 @@ def login_user(request):
         data = { 'valid': False }
         return Response(data)
 
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_user(request):
@@ -48,74 +49,94 @@ def register_user(request):
       request -- The full HTTP request object
     '''
     account_type = request.data.get('account_type', None)
+    username = request.data.get('username', None)
     email = request.data.get('email', None)
     first_name = request.data.get('first_name', None)
     last_name = request.data.get('last_name', None)
     password = request.data.get('password', None)
 
-    if account_type is not None \
-        and email is not None\
-        and first_name is not None \
-        and last_name is not None \
-        and password is not None:
+    # Validate required fields
+    if not all([account_type, username, email, first_name, last_name, password]):
+        return Response(
+            {'message': 'You must provide username, email, password, first_name, last_name and account_type'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
-        if account_type == 'customer':
-            address = request.data.get('address', None)
-            if address is None:
-                return Response(
-                    {'message': 'You must provide an address for a customer'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-        elif account_type == 'employee':
-            specialty = request.data.get('specialty', None)
-            if specialty is None:
-                return Response(
-                    {'message': 'You must provide a specialty for an employee'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-        else:
+    # Validate username length
+    if len(username) < 3:
+        return Response(
+            {'message': 'Username must be at least 3 characters'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    if account_type == 'customer':
+        address = request.data.get('address', None)
+        if address is None:
             return Response(
-                {'message': 'Invalid account type. Valid values are \'customer\' or \'employee\''},
+                {'message': 'You must provide an address for a customer'},
                 status=status.HTTP_400_BAD_REQUEST
             )
-
-        try:
-            # Create a new user by invoking the `create_user` helper method
-            # on Django's built-in User model
-            new_user = User.objects.create_user(
-                username=request.data['email'],
-                email=request.data['email'],
-                password=request.data['password'],
-                first_name=request.data['first_name'],
-                last_name=request.data['last_name']
-            )
-        except IntegrityError:
+    elif account_type == 'employee':
+        specialty = request.data.get('specialty', None)
+        if specialty is None:
             return Response(
-                {'message': 'An account with that email address already exists'},
+                {'message': 'You must provide a specialty for an employee'},
                 status=status.HTTP_400_BAD_REQUEST
             )
+    else:
+        return Response(
+            {'message': 'Invalid account type. Valid values are \'customer\' or \'employee\''},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
-        account = None
+    # Check if username already exists
+    if User.objects.filter(username=username).exists():
+        return Response(
+            {'message': 'An account with that username already exists'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
-        if account_type == 'customer':
-            account = Customer.objects.create(
-                address=request.data['address'],
-                user=new_user
-            )
-        elif account_type == 'employee':
-            new_user.is_staff = True
-            new_user.save()
+    # Check if email already exists
+    if User.objects.filter(email=email).exists():
+        return Response(
+            {'message': 'An account with that email address already exists'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
-            account = Employee.objects.create(
-                specialty=request.data['specialty'],
-                user=new_user
-            )
+    try:
+        # Create a new user by invoking the `create_user` helper method
+        # on Django's built-in User model
+        new_user = User.objects.create_user(
+            username=username,
+            email=email,
+            password=password,
+            first_name=first_name,
+            last_name=last_name
+        )
+    except IntegrityError:
+        return Response(
+            {'message': 'An account with that username or email already exists'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
+    account = None
 
-        # Use the REST Framework's token generator on the new user account
-        token = Token.objects.create(user=account.user)
-        # Return the token to the client
-        data = { 'token': token.key, 'staff': new_user.is_staff }
-        return Response(data)
+    if account_type == 'customer':
+        account = Customer.objects.create(
+            address=request.data['address'],
+            user=new_user
+        )
+    elif account_type == 'employee':
+        new_user.is_staff = True
+        new_user.save()
 
-    return Response({'message': 'You must provide email, password, first_name, last_name and account_type'}, status=status.HTTP_400_BAD_REQUEST)
+        account = Employee.objects.create(
+            specialty=request.data['specialty'],
+            user=new_user
+        )
+
+    # Use the REST Framework's token generator on the new user account
+    token = Token.objects.create(user=account.user)
+    # Return the token to the client
+    data = { 'token': token.key, 'staff': new_user.is_staff }
+    return Response(data)
